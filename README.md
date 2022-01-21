@@ -1,5 +1,5 @@
 # docs-ui
-Repo for the Antora UI theme. The Antora UI theme templates are based on Handlebars.
+Repo for the future Antora UI theme csutomized for DeltaStream. The Antora UI theme templates are based on Handlebars.
 
 Documentation for the Antora UI theme:
 
