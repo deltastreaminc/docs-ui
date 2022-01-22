@@ -5,7 +5,11 @@ Documentation for the Antora UI theme:
 
 https://docs.antora.org/antora-ui-default/
 
-Antora UI theme test site:
+Start with a baseline Antora UI theme. Clone from Gitlab here: 
+
+https://gitlab.com/antora/antora-ui-default
+
+View Antora UI theme test site:
 
 https://antora.gitlab.io/antora-ui-default/
 
