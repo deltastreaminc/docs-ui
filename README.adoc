@@ -33,7 +33,7 @@ The Antora project and its project spaces are governed by our https://gitlab.com
 By participating, you're agreeing to honor this code.
 Let's work together to make this a welcoming, professional, inclusive, and safe environment for everyone.
 
-== Use the Default UI
+== Use the Default UI theme bundle
 
 If you want to simply use the default UI for your Antora-generated site, add the following UI configuration to your playbook:
 
@@ -48,6 +48,39 @@ ui:
 NOTE: The `snapshot` flag tells Antora to fetch the UI when the `--fetch` command-line flag is present.
 This setting is required because updates to the UI bundle are pushed to the same URL.
 If the URL were to be unique, this setting would not be required.
+
+== Use our custom UI theme bundle
+
+To use the custom DeltaStream UI theme with Antora, add the following configuration to your playbook file:
+
+NOTE: Final URL TBD and could be subject to changes. How are we going to handle bundle releases and the URL?
+We might have to make the ui theme repo public. Need to test pointing to private repo and our bundle when available. 
+the `git@` segment in a URL indicates which repositories are private (`url: https://git@github.com/`). Additional tokens are required in this scenario.
+
+[source,yaml]
+----
+ui:
+  bundle:
+    url: https://github.com/deltastreaminc/docs-ui/ui-bundle.zip
+----
+
+Couchbase example:
+
+[source,yaml]
+----
+https://github.com/couchbase/docs-ui/releases/download/prod-144/ui-bundle.zip
+----
+
+Mulesoft example:
+
+[source,yaml]
+----
+ui:
+  bundle:
+    url: %UI_BUNDLE_URL%
+----
+
+Replace `%UI_BUNDLE_URL%` with desired release bundle. See https://github.com/mulesoft/docs-site-ui for more info and their examples.
 
 Read on to learn how to customize the default UI for your own documentation.
 
