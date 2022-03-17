@@ -4,6 +4,7 @@ NAMESPACE=deltastream
 COMPONENT=docs-ui
 
 BUILD_TIME=$(shell date -u +'%Y-%m-%dT%H:%M:%SZ')
+RELEASE_VERSION = 'v0.0.1'
 
 # version format: <last github version>-dirty-<sha>, ex: 0.0.1-dirty-sds342
 VERSION ?= $(shell git describe --always --tags `git rev-list --tags --max-count=1` | cut -c2-)$(shell [[ -z $$(git status --porcelain) ]] || echo "-dirty-$(shell git rev-parse --short HEAD)")
@@ -36,16 +37,10 @@ install:
 deploy:
 	gulp preview
 
-# Step 1 - Create github release
-# make release
-# ref: https://cli.github.com/manual/gh_release_create
-# Upload all tarballs in a directory as release assets
-# $ gh release create v1.2.3 ./dist/*.tgz
+bundle:
+	SOURCEMAPS=true gulp bundle
 
-# Upload a release asset with a display label
-# $ gh release create v1.2.3 '/path/to/asset.zip#My display label'
-
-
-# Step 2 - Add workflow file to publish package on release.
-# https://docs.github.com/en/packages/quickstart
+release:
+	gh auth login
+	gh release create ${RELEASE_VERSION} build/*.zip
 
