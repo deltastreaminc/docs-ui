@@ -10,16 +10,17 @@ VERSION ?= $(shell git describe --always --tags `git rev-list --tags --max-count
 VCS_REF:=$(shell git rev-parse --short HEAD)
 ts := $(shell /bin/date "+%Y-%m-%d---%H-%M-%S")
 
-.PHONY: init
+.PHONY: init build deploy
 
 timestamp:
 	@echo "-----------------"
 	@echo Timestamp = $(ts)
 	@echo "-----------------"
 
-default: init
+default: install
 
 info: timestamp
+	@echo Version = $(VERSION)
 
 usage: timestamp
 	@echo "docs-ui build"
@@ -27,4 +28,24 @@ usage: timestamp
 	@echo "Usage: provides usage for make targets."
 	@echo " make build  - runs the build process."
 	@echo " make deploy - deploys the service."
-	]@echo " "
+	@echo " "
+
+install:
+	npm install
+
+deploy:
+	gulp preview
+
+# Step 1 - Create github release
+# make release
+# ref: https://cli.github.com/manual/gh_release_create
+# Upload all tarballs in a directory as release assets
+# $ gh release create v1.2.3 ./dist/*.tgz
+
+# Upload a release asset with a display label
+# $ gh release create v1.2.3 '/path/to/asset.zip#My display label'
+
+
+# Step 2 - Add workflow file to publish package on release.
+
+
