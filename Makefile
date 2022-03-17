@@ -18,23 +18,26 @@ timestamp:
 	@echo Timestamp = $(ts)
 	@echo "-----------------"
 
-default: install
+default: install live bundle release clean
 
 info: timestamp
 	@echo Version = $(VERSION)
 
-usage: timestamp
+usage: 
 	@echo "docs-ui build"
 	@echo " "
-	@echo "Usage: provides usage for make targets."
-	@echo " make build  - runs the build process."
-	@echo " make deploy - deploys the service."
+	@echo "Usage:"
+	@echo " make install - install npm dependencies."
+	@echo " make bundle  - builds ui bundle."
+	@echo " make live    - runs live preview."
+	@echo " make clean   - cleans the build directory."
+	@echo " make release - generates github release."
 	@echo " "
 
 install:
 	npm install
 
-preview:
+live:
 	gulp preview
 
 bundle:
