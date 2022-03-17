@@ -37,3 +37,7 @@ build.log
 .svn
 .CVS
 .hg*
+
+# build
+build
+public/_/

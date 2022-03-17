@@ -34,7 +34,7 @@ usage: timestamp
 install:
 	npm install
 
-deploy:
+preview:
 	gulp preview
 
 bundle:
@@ -43,4 +43,10 @@ bundle:
 release:
 	gh auth login
 	gh release create ${RELEASE_VERSION} build/*.zip
+
+clean:
+	rm -rf build/* && \
+	rm -rf public/_/css && \
+	rm -rf public/_/js
+
 
