@@ -47,5 +47,5 @@ deploy:
 
 
 # Step 2 - Add workflow file to publish package on release.
-
+# https://docs.github.com/en/packages/quickstart
 
