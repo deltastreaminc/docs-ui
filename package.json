@@ -4,7 +4,7 @@
   "homepage": "https://gitlab.com/antora/antora-ui-default",
   "license": "MPL-2.0",
   "publishConfig": {
-    "@mohnishbasha:registry": "https://npm.pkg.github.com"
+    "registry": "https://npm.pkg.github.com"
   },
   "repository": {
     "type": "git",
@@ -56,5 +56,11 @@
     "typeface-roboto-mono": "0.0.75",
     "vinyl-buffer": "~1.0",
     "vinyl-fs": "~3.0"
+  },
+  "scripts": {
+    "release": "gh auth login && gh release create ${RELEASE_VERSION} build/*.zip",
+    "clean": "rm -rf build/* && rm -rf public/_/css && rm -rf public/_/js",
+    "bundle": "SOURCEMAPS=true gulp bundle",
+    "live": "gulp preview"
   }
 }

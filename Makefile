@@ -23,7 +23,7 @@ default: install live bundle release clean
 info: timestamp
 	@echo Version = $(VERSION)
 
-usage: 
+usage:
 	@echo "docs-ui build"
 	@echo " "
 	@echo "Usage:"
@@ -38,18 +38,15 @@ install:
 	npm install
 
 live:
-	gulp preview
+	npm run live
 
 bundle:
-	SOURCEMAPS=true gulp bundle
+	npm run bundle
 
 release:
-	gh auth login
-	gh release create ${RELEASE_VERSION} build/*.zip
+	npm run release
 
 clean:
-	rm -rf build/* && \
-	rm -rf public/_/css && \
-	rm -rf public/_/js
+	npm run clean
 
 
