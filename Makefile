@@ -40,7 +40,7 @@ install:
 live:
 	npm run live
 
-bundle:
+build:
 	npm run bundle
 
 release:
