@@ -11,7 +11,7 @@ VERSION ?= $(shell git describe --always --tags `git rev-list --tags --max-count
 VCS_REF:=$(shell git rev-parse --short HEAD)
 ts := $(shell /bin/date "+%Y-%m-%d---%H-%M-%S")
 
-.PHONY: install live bundle release clean
+.PHONY: info install live bundle release clean
 
 timestamp:
 	@echo "-----------------"
@@ -28,10 +28,9 @@ usage:
 	@echo " "
 	@echo "Usage:"
 	@echo " make install - install npm dependencies."
-	@echo " make bundle  - builds ui bundle."
+	@echo " make build  - builds ui bundle."
 	@echo " make live    - runs live preview."
 	@echo " make clean   - cleans the build directory."
-	@echo " make release - generates github release."
 	@echo " "
 
 install:
