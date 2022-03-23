@@ -1,6 +1,7 @@
-name: DocsUI - publish package
+name: docs-ui - main - publish
 
 on:
+  workflow_dispatch: {}
   release:
     types: [created]
 
