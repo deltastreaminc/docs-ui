@@ -1,5 +1,6 @@
 {
   "name": "@antora/ui-default",
+  "version": "v0.0.1",
   "description": "An archetype project that produces a UI for creating documentation sites with Antora",
   "homepage": "https://gitlab.com/antora/antora-ui-default",
   "license": "MPL-2.0",
@@ -63,5 +64,4 @@
     "bundle": "SOURCEMAPS=true gulp bundle",
     "live": "gulp preview"
   },
-  "version": "v0.0.1"
 }
