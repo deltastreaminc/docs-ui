@@ -4,7 +4,7 @@
   "homepage": "https://gitlab.com/antora/antora-ui-default",
   "license": "MPL-2.0",
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
+    "@mohnishbasha:registry": "https://npm.pkg.github.com"
   },
   "repository": {
     "type": "git",
