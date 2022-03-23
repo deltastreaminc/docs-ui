@@ -11,14 +11,14 @@ VERSION ?= $(shell git describe --always --tags `git rev-list --tags --max-count
 VCS_REF:=$(shell git rev-parse --short HEAD)
 ts := $(shell /bin/date "+%Y-%m-%d---%H-%M-%S")
 
-.PHONY: init build deploy
+.PHONY: install live bundle release clean
 
 timestamp:
 	@echo "-----------------"
 	@echo Timestamp = $(ts)
 	@echo "-----------------"
 
-default: install live bundle release clean
+default: install
 
 info: timestamp
 	@echo Version = $(VERSION)
