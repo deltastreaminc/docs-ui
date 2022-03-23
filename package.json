@@ -63,5 +63,5 @@
     "clean": "rm -rf build/* && rm -rf public/_/css && rm -rf public/_/js",
     "bundle": "SOURCEMAPS=true gulp bundle",
     "live": "gulp preview"
-  },
+  }
 }
