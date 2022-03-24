@@ -43,7 +43,7 @@ build:
 	npm run bundle
 
 release:
-	npm run release
+	RELEASE_VERSION=${RELEASE_VERSION} npm run release
 
 clean:
 	npm run clean
