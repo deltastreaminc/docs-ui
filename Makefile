@@ -43,6 +43,7 @@ build:
 	npm run bundle
 
 release:
+  # uses github credentials store or env var GITHUB_TOKEN.
 	RELEASE_VERSION=${RELEASE_VERSION} npm run release
 
 clean:

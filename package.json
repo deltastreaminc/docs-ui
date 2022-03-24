@@ -59,7 +59,7 @@
     "vinyl-fs": "~3.0"
   },
   "scripts": {
-    "release": "gh auth login && gh release create ${RELEASE_VERSION} build/*.zip",
+    "release": "gh auth login -h github.com && gh release create ${RELEASE_VERSION} build/*.zip",
     "clean": "rm -rf build/* && rm -rf public/_/css && rm -rf public/_/js",
     "bundle": "SOURCEMAPS=true gulp bundle",
     "live": "gulp preview"
