@@ -11,7 +11,7 @@ VERSION ?= $(shell git describe --always --tags `git rev-list --tags --max-count
 VCS_REF:=$(shell git rev-parse --short HEAD)
 ts := $(shell /bin/date "+%Y-%m-%d---%H-%M-%S")
 
-.PHONY: info install live bundle release clean
+.PHONY: info install live build release clean
 
 timestamp:
 	@echo "-----------------"
